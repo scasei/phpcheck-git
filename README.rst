@@ -5,6 +5,7 @@ GIT - PHP check
 :Author: Remigijus Jarmalavicius <remigijus(a)jarmalavicius.lt>
 :Thanks to: Vytautas Povilaitis <php-checker(a)vytux.lt>
 :Thanks to: hkdobrev (https://github.com/hkdobrev)
+:Thanks to: Cliff Seal (https://github.com/logoscreative)
 
 About
 -----
@@ -23,10 +24,6 @@ To install hook, copy pre-commit file to your project .git/hooks/pre-commit:
 
 Now, when you will make some modifications for code and will try to commit, GIT
 will stop you and tells where problem exist.
-
-Thanks
-------
-Cliff Seal - for fixing grammar of this hook.
 
 Bugs
 ----
