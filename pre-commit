@@ -3,6 +3,7 @@
 # Author: Vytautas Povilaitis <php-checker@vytux.lt>
 #
 # XDebug check added by William Clemens <http://github.com/wesclemens>
+# Handle spaces in filenames Dave Barnwell <https://github.com/freshsauce>
 
 ROOT_DIR="$(pwd)/"
 LIST=$(git diff-index --cached --name-only --diff-filter=ACMR HEAD)
@@ -11,7 +12,7 @@ for file in $LIST
 do
     EXTENSION=$(echo "$file" | grep ".php$")
     if [ "$EXTENSION" != "" ]; then
-        ERRORS=$(php -l $ROOT_DIR$file 2>&1 | grep "Parse error")
+        ERRORS=$(php -l "$ROOT_DIR$file" 2>&1 | grep "Parse error")
         if [ "$ERRORS" != "" ]; then
             if [ "$ERRORS_BUFFER" != "" ]; then
                 ERRORS_BUFFER="$ERRORS_BUFFER\n$ERRORS"
@@ -22,7 +23,7 @@ do
         fi
 
         # Check for xdebug statments
-        ERRORS=$(grep -nH xdebug_ $ROOT_DIR$file | \
+        ERRORS=$(grep -nH xdebug_ "$ROOT_DIR$file" | \
                  sed -e 's/^/Found XDebug Statment : /')
         if [ "$ERRORS" != "" ]; then
             if [ "$ERRORS_BUFFER" != "" ]; then
