@@ -6,6 +6,7 @@ GIT - PHP check
 :Thanks to: Vytautas Povilaitis <php-checker(a)vytux.lt>
 :Thanks to: hkdobrev (https://github.com/hkdobrev)
 :Thanks to: Cliff Seal (https://github.com/logoscreative)
+:Thanks to: Dave Barnwell (https://github.com/freshsauce)
 
 About
 -----
